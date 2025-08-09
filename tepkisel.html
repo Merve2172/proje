@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tepkisel Düzen</title>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 1px;
+  border: 1px solid red;
+}
+
+/* Sütun genişlikleri (masaüstü görünüm) */
+.col-2  {width: 16.66%;}
+.col-3  {width: 25%;}
+.col-4  {width: 33.33%;}
+.col-9  {width: 75%;}
+.col-10 {width: 83.33%;}
+
+/* Satır temizleme */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* 768px altı ekranlarda sütunlar %100 genişlikte olsun */
+@media screen and (max-width: 768px) {
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div id="row1" class="row">
+  <div id="logo" class="col-2">
+    <img src="RESİM.jpg" alt="RESİM">
+  </div>
+  <div id="anamenu" class="col-10">
+    ANAMENU
+  </div>
+</div>
+
+<div id="row2" class="row">
+  <div id="icerik" class="col-9">
+    ICERIK
+  </div>
+  <div id="yanmenu" class="col-3">
+    YANMENU
+  </div>
+</div>
+
+<div id="row3" class="row">
+  <div id="altsol" class="col-4">
+    ALTSOL
+  </div>
+  <div id="altorta" class="col-4">
+    ALTORTA
+  </div>
+  <div id="altsag" class="col-4">
+    ALTSAG
+  </div>
+</div>
+
+</body>
+</html>
